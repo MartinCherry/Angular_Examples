@@ -1,0 +1,33 @@
+<section class="planner-section">
+  <h1 class="planner-title">Planner page</h1>
+  <div class="planner-container">
+    <div class="planner">
+      <div class="planner-actions">
+        <input [(ngModel)]="inputValue" (keydown.enter)="addTask()" class="task-input" type="text" placeholder="Add new task...">
+        <button  class="task-add-btn" (click)="addTask()">Add</button>
+
+      </div>
+      <div class="planner-tasks">
+       <div class="planner-task" *ngFor="let task of plannerTasks; let i = index">
+         <input [(ngModel)]="task.done" type="checkbox"/>
+         <span class='task-label' ng-class="{ 'selected': task.done }" > {{task.text}} </span>
+
+         <button class="remove-icon" (click)="deleteTask(i)">X</button>
+      </div>
+      <div *ngIf="plannerTasks.length>0" class="clearButtonContainer">
+        <button (click)="clearAllList()" class="clearButton">Clear all list</button>
+
+      </div>
+    </div>
+      <div *ngIf="plannerTasks.length>0" class="tasks-done-dialog">
+        {{getUnfinishedTasks()}} / {{plannerTasks.length}} tasks done
+      </div>
+      <div *ngIf="plannerTasks.length === 0" class="tasks-done-dialog">
+        No tasks added. Add new task!
+      </div>
+
+    </div>
+  </div>
+
+
+</section>
