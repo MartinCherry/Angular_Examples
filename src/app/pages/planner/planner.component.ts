@@ -1,18 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-planner',
   templateUrl: './planner.component.html',
   styleUrls: ['./planner.component.scss'],
 })
-export class PlannerComponent {
+export class PlannerComponent implements OnInit {
   plannerTasks = [
     {
-      text: 'Task1',
+      text: 'Task 1',
       done: false,
     },
   ];
   inputValue = '';
+
+  ngOnInit(): void {
+    this.plannerTasks.splice(0);
+  }
 
   addTask(): void {
     if (this.inputValue !== '') {
