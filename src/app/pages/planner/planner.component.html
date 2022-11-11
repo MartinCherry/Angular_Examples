@@ -3,14 +3,19 @@
   <div class="planner-container">
     <div class="planner">
       <div class="planner-actions">
-        <input [(ngModel)]="inputValue" (keydown.enter)="addTask()" class="task-input" type="text" placeholder="Add new task...">
-        <button  class="task-add-btn" (click)="addTask()">Add</button>
+        <input
+          [(ngModel)]="inputValue"
+               (keydown.enter)="addTask()"
+               class="task-input"
+               type="text"
+               placeholder="Add new task..." />
+        <button [disabled]="!inputValue" class="task-add-btn" (click)="addTask()">Add</button>
 
       </div>
       <div class="planner-tasks">
        <div class="planner-task" *ngFor="let task of plannerTasks; let i = index">
          <input [(ngModel)]="task.done" type="checkbox"/>
-         <span class='task-label' ng-class="{ 'selected': task.done }" > {{task.text}} </span>
+         <span class='task-label' [ngClass]="{ 'selected': task.done }" > {{task.text}} </span>
 
          <button class="remove-icon" (click)="deleteTask(i)">X</button>
       </div>
@@ -20,7 +25,7 @@
       </div>
     </div>
       <div *ngIf="plannerTasks.length>0" class="tasks-done-dialog">
-        {{getUnfinishedTasks()}} / {{plannerTasks.length}} tasks done
+        {{doneTasks}} / {{plannerTasks.length}} tasks done
       </div>
       <div *ngIf="plannerTasks.length === 0" class="tasks-done-dialog">
         No tasks added. Add new task!

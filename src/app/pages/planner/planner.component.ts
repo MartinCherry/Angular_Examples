@@ -1,25 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+
+import { PlannerTask } from '../../models/planner.model';
 
 @Component({
   selector: 'app-planner',
   templateUrl: './planner.component.html',
   styleUrls: ['./planner.component.scss'],
 })
-export class PlannerComponent implements OnInit {
-  plannerTasks = [
-    {
-      text: 'Task 1',
-      done: false,
-    },
-  ];
+export class PlannerComponent {
+  plannerTasks: PlannerTask[] = [];
   inputValue = '';
 
-  ngOnInit(): void {
-    this.plannerTasks.splice(0);
-  }
-
   addTask(): void {
-    if (this.inputValue !== '') {
+    if (this.inputValue) {
       const newTask = { text: this.inputValue, done: false };
 
       this.inputValue = '';
@@ -31,7 +24,7 @@ export class PlannerComponent implements OnInit {
     this.plannerTasks.splice(index, 1);
   }
 
-  getUnfinishedTasks(): number {
+  get doneTasks(): number {
     return this.plannerTasks.filter((task) => task.done).length;
   }
 

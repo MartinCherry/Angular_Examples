@@ -1,0 +1,132 @@
+.signIn-sections {
+  background-color: #130F1C;
+  padding: 104px;
+  min-height: 100vh;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.signIn-form-container {
+  display: flex;
+  justify-content: center;
+}
+
+.signIn-form {
+  display: flex;
+  flex-direction: column;
+  width: 428px;
+  background-color: #1F1B29;
+  padding: 32px;
+  gap: 32px;
+  border-radius: 10px;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.signIn-form-content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.form-field-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 16px;
+  font-weight: 400;
+  color: #BAB9BD;
+}
+
+.input {
+  border: none;
+  border-radius: 5px;
+  background-color: #2E2A36;
+  color: #99969E;
+  padding: 12px 14px 12px 12px;
+
+  &:focus {
+    outline: none;
+  }
+}
+
+.subscribe-checkbox-field {
+  display: flex;
+  gap: 10px;
+  color: #BAB9BD;
+  font-size: 14px;
+}
+
+:host ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-bar {
+  background-color: #FD7918;
+}
+
+:host ::ng-deep .mat-slide-toggle.mat-checked:not(.mat-disabled) .mat-slide-toggle-thumb {
+  background-color: #FFFFFF;
+}
+
+.signIn-button {
+  border: none;
+  border-radius: 5px;
+  background-color: #651FFF;
+  color: #FFFFFF;
+  font-size: 16px;
+  padding: 12px;
+  cursor: pointer;
+
+  &:disabled {
+    background-color: dimgray;
+    cursor: not-allowed;
+    color: black;
+  }
+}
+
+.forgot-password-container {
+  display: flex;
+  justify-content: center;
+}
+
+.forgot-password {
+  font-size: 16px;
+  color: #BAB9BD;
+}
+
+.mat-divider {
+  border: 1px solid #635F6B;
+}
+
+.login-options-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.login-options-text {
+  text-align: center;
+  color: #5A5761;
+}
+
+.login-options-buttons {
+  display: flex;
+
+  gap: 10px;
+}
+
+.login-button {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  padding: 12px;
+  background-color: #2E2A36;
+}
+

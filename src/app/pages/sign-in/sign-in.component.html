@@ -1,0 +1,54 @@
+<section class="signIn-sections">
+  <div class="signIn-form-container">
+    <form class="signIn-form" *ngIf="signInForm" [formGroup]="signInForm" >
+      <div class="signIn-form-content">
+        <div class="form-field-container">
+        <div class="form-field">
+          <label for="username" class="label">Username</label>
+          <input
+            formControlName="username"
+            [ngClass]="{'field-error':signInForm.get('username')?.invalid && signInForm.get('username')?.touched}"
+            id="username" type="text" class="input" placeholder="Username"/>
+        </div>
+          <small *ngIf="signInForm.get('username')?.hasError('required') && signInForm.get('username')?.touched" class="error">This field is required</small>
+        <div class="form-field">
+          <label for="password" class="label">Password</label>
+          <input
+            [ngClass]="{'field-error':signInForm.get('password')?.invalid && signInForm.get('password')?.touched}"
+            formControlName="password"
+            id="password" type="password" class="input" placeholder="••••••••"/>
+        </div>
+          <small *ngIf="signInForm.get('password')?.hasError('required') && signInForm.get('password')?.touched" class="error">This field is required</small>
+        </div>
+        <div class="subscribe-checkbox-field">
+          <mat-slide-toggle formControlName="subscribe" id="subscribe"></mat-slide-toggle>
+          <label for="subscribe">Subscribe to News</label>
+        </div>
+        <button [disabled]="signInForm.invalid" (click)="signIn()" class="signIn-button" type="button">Sign In</button>
+        <div class="forgot-password-container">
+          <a class="forgot-password" href="" >Forgot your password?</a>
+        </div>
+        <mat-divider class="mat-divider"></mat-divider>
+        <div class="login-options-container">
+          <div class="login-options-text">
+            or continue with
+          </div>
+          <div class="login-options-buttons">
+            <button class="login-button" type="button">
+            <img src="/assets/images/google.svg" alt="">
+            </button>
+            <button class="login-button" type="button">
+              <img src="/assets/images/facebook.svg" alt="">
+            </button>
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </form>
+
+  </div>
+</section>

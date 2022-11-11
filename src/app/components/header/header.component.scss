@@ -1,0 +1,1 @@
+.header{  padding: 10px;  display: flex;  justify-content: flex-end;  background-color: #0D0630;  gap: 10px;}.headerLink{  text-decoration: none;  color: white;  border-bottom: 1px solid transparent;  &:hover{    color: #E6F9AF;    cursor: pointer;    border-bottom-color: #E6F9AF;  }}.active{  color: #8BBEB2;  border-bottom-color: #8BBEB2;}
