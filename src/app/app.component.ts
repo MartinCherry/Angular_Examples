@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent implements OnInit {
-  title = 'angular-boilerplate';
+  title = 'first-angular-task';
   description = 'This is a description';
   showDescription = false;
   catNames = ['Pūciņa', 'Muris', 'Sniedziņš'];

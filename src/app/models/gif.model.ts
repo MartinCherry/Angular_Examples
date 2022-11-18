@@ -1,0 +1,1 @@
+export interface GifModel {  url: string;  status: string;}

@@ -1,5 +1,136 @@
-<div>
-  <div *ngIf="user$ | async as user">
-    {{user.name}}
+<section class="user-section">
+  <div class="user-container" *ngIf="user$ | async as user">
+    <div class="user-portfolio-container">
+      <div class="user-main-container">
+        <div class="user-name">
+          {{user.name}}
+        </div>
+        <div class="user-picture-container">
+          <div class="user-picture" [ngStyle]="{ 'background-image': 'url(https://randomuser.me/api/portraits/men/' + user.id + '.jpg)'}"
+          > </div>
+        </div>
+        <div class="user-details-container">
+          <div class="user-details-field">
+            <div class="user-details-field-name">
+              ID:
+            </div>
+            <div class="user-details-field-answer">
+              {{user.id}}
+            </div>
+          </div>
+          <div class="user-details-field">
+            <div class="user-details-field-name">
+              Username:
+            </div>
+            <div class="user-details-field-answer">
+              {{user.username}}
+            </div>
+          </div>
+          <div class="user-details-field">
+            <div class="user-details-field-name">
+              E-mail:
+            </div>
+            <div class="user-details-field-answer">
+              {{user.email}}
+            </div>
+          </div>
+          <div class="user-details-field">
+            <div class="user-details-field-name">
+              Phone:
+            </div>
+            <div class="user-details-field-answer">
+              {{user.phone}}
+            </div>
+          </div>
+          <div class="user-details-field">
+            <div class="user-details-field-name">
+              Website:
+            </div>
+            <div class="user-details-field-answer">
+              {{user.website}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="user-company-quote-container">
+        <div class="user-company-quote-sign">
+          <img src="/assets/images/quotes.svg" alt=""/>
+        </div>
+        <div class="user-company-quote-answer">
+          {{user.company.bs}}
+        </div>
+      </div>
+    </div>
+    <div class="user-sidebar-container">
+      <div class="user-sidebar-section-container">
+        <h2 class="user-sidebar-headline">
+          Private address:
+        </h2>
+        <div class="user-sidebar-details-container">
+          <div class="user-sidebar-details-field">
+            <div class="user-sidebar-details-name">
+              Street:
+            </div>
+            <div class="user-sidebar-details-answer">
+              {{user.address.street}}
+            </div>
+            </div>
+          <div class="user-sidebar-details-field">
+            <div class="user-sidebar-details-name">
+              Suite:
+            </div>
+            <div>
+              {{user.address.suite}}
+            </div>
+
+          </div>
+          <div class="user-sidebar-details-field">
+            <div class="user-sidebar-details-name">
+              City:
+            </div>
+            <div>
+              {{user.address.city}}
+            </div>
+
+          </div>
+          <div class="user-sidebar-details-field">
+            <div class="user-sidebar-details-name">
+              Zip-Code:
+            </div>
+            <div>
+              {{user.address.zipcode}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="user-sidebar-section-container">
+        <h2 class="user-sidebar-headline">
+          Company:
+        </h2>
+        <div class="user-sidebar-details-container">
+          <div class="user-sidebar-details-field">
+            <div class="user-sidebar-details-name">
+              Name:
+            </div>
+            <div class="user-sidebar-details-answer">
+              {{user.company.name}}
+            </div>
+
+          </div>
+          <div class="user-sidebar-details-field">
+            <div class="user-sidebar-details-name">
+              Catch Phrase:
+            </div>
+            <div>
+              {{user.company.catchPhrase}}
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
   </div>
-</div>
+</section>

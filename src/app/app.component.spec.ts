@@ -18,11 +18,11 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have as title 'angular-boilerplate'`, () => {
+  it(`should have as title 'first-angular-task'`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
 
-    expect(app.title).toEqual('angular-boilerplate');
+    expect(app.title).toEqual('first-angular-task');
   });
 
   it('should render title', () => {
@@ -33,7 +33,7 @@ describe('AppComponent', () => {
     const compiled = fixture.nativeElement as HTMLElement;
 
     expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'angular-boilerplate app is running!',
+      'first-angular-task app is running!',
     );
   });
 });
